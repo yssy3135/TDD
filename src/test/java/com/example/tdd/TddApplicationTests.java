@@ -1,10 +1,12 @@
 package com.example.tdd;
 
-import com.example.tdd.Money.Dollar;
+import com.example.tdd.Money.Bank;
+import com.example.tdd.Money.Expression;
 import com.example.tdd.Money.Franc;
 import com.example.tdd.Money.Money;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,6 +47,15 @@ class TddApplicationTests {
 //    public void testDifferentClassEquality(){
 //        assertTrue(new Money(10,"CHF").equals(new Franc(10,"CHF")));
 //    }
+
+    @Test
+    public void testSimpleAddition() {
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum,"USD");
+        assertEquals(Money.dollar(10),reduced);
+    }
 
 
 }
