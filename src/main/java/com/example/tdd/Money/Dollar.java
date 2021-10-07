@@ -8,10 +8,5 @@ public class Dollar extends Money {
     }
 
 
-    @Override
-    public String currency() {
-        return currency;
-    }
-
 
 }

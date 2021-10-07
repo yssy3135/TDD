@@ -31,8 +31,6 @@ class TddApplicationTests {
     public void testEquality(){
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
         assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-        assertTrue(Money.franc(5).equals(Money.franc(5)));
-        assertFalse(Money.franc(5).equals(Money.franc(6)));
         assertFalse(Money.franc(5).equals(Money.dollar(5)));
 
     }
@@ -42,11 +40,11 @@ class TddApplicationTests {
         assertEquals("USD",Money.dollar(1).currency());
         assertEquals("CHF",Money.franc(1).currency());
     }
-
-    @Test
-    public void testDifferentClassEquality(){
-        assertTrue(new Money(10,"CHF").equals(new Franc(10,"CHF")));
-    }
+//
+//    @Test
+//    public void testDifferentClassEquality(){
+//        assertTrue(new Money(10,"CHF").equals(new Franc(10,"CHF")));
+//    }
 
 
 }
